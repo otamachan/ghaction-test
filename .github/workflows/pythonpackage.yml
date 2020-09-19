@@ -16,4 +16,4 @@ jobs:
       with:
         python-version: 3.7
     - name: Check Py_ENABLE_SHARED
-      run: python3 -c "import distutils.sysconfig; print(distutils.sysconfig.get_config_var('Py_ENABLE_SHARED'))"
+      run: python3 -c "import distutils.sysconfig; import pprint;pprint.pprint(distutils.sysconfig.get_config_vars())"
