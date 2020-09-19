@@ -16,4 +16,4 @@ jobs:
       with:
         python-version: 3.7
     - name: Check Py_ENABLE_SHARED
-      run: python3 -c "import distutils.sysconfig; import pprint;pprint.pprint(distutils.sysconfig.get_config_vars())"
+      run: python3 -c "import distutils.sysconfig, sys, os; import pprint;pprint.pprint(distutils.sysconfig.get_config_vars()); print(hasattr(sys, 'getandroidapilevel')); print(sys.platform); pprint.pprint(os.environ); print(distutils.sysconfig.get_config_var('ANDROID_API_LEVEL')); print(distutils.sysconfig.get_config_var('MACHDEP'))"
